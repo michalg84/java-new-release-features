@@ -19,7 +19,7 @@ public class StreamGatherers {
     final double lengthDifferenceFixed(List<String> words) {
         return words.stream()
                 .gather(Gatherers.windowFixed(2))
-                .peek(w -> System.out.println(w.getFirst() + " - " + w.getLast()))
+                .peek(w -> System.out.println(STR."\{w.getFirst()} - \{w.getLast()}"))
                 .map(w -> Math.abs(w.getFirst().length() - w.getLast().length()))
                 .mapToInt(x -> x)
                 .average()
